@@ -2,7 +2,6 @@ from . import fast_nn
 from . import nn
 
 import tensorflow as tf
-from tensorflow.contrib.framework.python.ops import arg_scope
 import numpy as np
 
 UPDATE_V_STACK = 'update_v_stack'
