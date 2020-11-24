@@ -1,7 +1,6 @@
 from . import nn
 
 import tensorflow as tf
-from tensorflow.contrib.framework.python.ops import add_arg_scope
 import numpy as np
 
 from collections import namedtuple
@@ -108,7 +107,7 @@ def _roll_cache(cache):
     return cache.assign(rolled_cache)
 
 
-@add_arg_scope
+
 def down_shifted_conv2d(row_input,
                         network_info,
                         stride,
@@ -157,7 +156,7 @@ def down_shifted_conv2d(row_input,
     return outputs
 
 
-@add_arg_scope
+
 def down_right_shifted_conv2d(pixel_input,
                               network_info,
                               row,
@@ -230,7 +229,7 @@ def _create_deconv_cache(li, stride):
     return cache, cache_height, cache_width
 
 
-@add_arg_scope
+
 def down_shifted_deconv2d(row_input,
                           network_info,
                           row,
@@ -293,7 +292,7 @@ def down_shifted_deconv2d(row_input,
     return outputs
 
 
-@add_arg_scope
+
 def down_right_shifted_deconv2d(pixel_input,
                                 network_info,
                                 row,
@@ -389,7 +388,7 @@ def _gated_nonlinearity(out):
     return a * tf.nn.sigmoid(b)
 
 
-@add_arg_scope
+
 def gated_resnet_vstack_only(row_input,
                              network_info,
                              row,
@@ -439,7 +438,7 @@ def gated_resnet_vstack_only(row_input,
     return out
 
 
-@add_arg_scope
+
 def gated_resnet_hstack(pixel_input,
                         v_stack_row_input,
                         network_info,
